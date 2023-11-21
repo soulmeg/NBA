@@ -1,5 +1,10 @@
-\c nba;
-insert into joueur values 
+INSERT INTO equipe (id_equipe, nom_equipe) VALUES
+       (1, 'Lakers'),
+       (2, 'Warriors'),
+       (3, 'Nets'),
+       (4, 'Bucks');
+
+insert into joueur values
     (1,'Lebron',1),
     (2,'Curry',2),
     (3, 'Durant',2),
@@ -8,23 +13,19 @@ insert into joueur values
 
 
 insert into action values
-    (1,'Passe',NULL),
+    (1,'Passe',0),
     (2,'T1',1),
     (3,'T2',2),
     (4,'T3',3),
-    (5,'TR',NULL),
-    (6,'RO',NULL),
-    (7,'RD',NULL),
-    (8,'LFRE',NULL),
-    (9,'LFRA',NULL),
-    (10,'desactive',NULL);
+    (5,'TR',0),
+    (6,'RO',0),
+    (7,'RD',0),
+    (8,'LFRE',0),
+    (9,'LFRA',0),
+    (10,'desactive',0);
 
 
-INSERT INTO equipe (id_equipe, nom_equipe) VALUES 
-    (1, 'Lakers'),
-    (2, 'Warriors'),
-    (3, 'Nets'),
-    (4, 'Bucks');
+
 
 INSERT INTO saison (id_saison, nom_saison) VALUES 
     (1, '2021-2022'),
