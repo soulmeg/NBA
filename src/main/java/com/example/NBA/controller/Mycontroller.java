@@ -129,7 +129,7 @@ public class Mycontroller {
             StatistiqueFinale ss = new StatistiqueFinale();
             ss.setJoueur(joueurs.get(i));
             ss.setM(calculate(joueurs.get(i).getId_joueur()));
-            ss.setMJ(calculate(joueurs.get(i).getId_joueur()));
+            ss.setMJ(calculateNombreTotalMatchsJoues(joueurs.get(i).getId_joueur()).doubleValue());
             ss.setPPM(calculate(joueurs.get(i).getId_joueur()));
             ss.setRPM(calculate(joueurs.get(i).getId_joueur()));
             ss.setPDPM(calculate(joueurs.get(i).getId_joueur()));
@@ -144,22 +144,14 @@ public class Mycontroller {
         return stats;
     }
 
+    public Long calculateNombreTotalMatchsJoues(@PathVariable Long joueurId) {
+        List<Statistique> statistiques = stat_repo.findByJoueurId(joueurId);
+        return statistiques.stream()
+                .map(stat -> stat.getId_match().getId_match())
+                .distinct()
+                .count();
+    }
 
-//    // Nombre total de matchs joués
-//    @GetMapping("/nombreTotalMatchsJoues/{joueurId}")
-//    public Long calculateNombreTotalMatchsJoues(@PathVariable Long joueurId) {
-//        Optional<Joueur> joueurOptional = joueur_repo.findById(joueurId);
-//
-//        if (joueurOptional.isPresent()) {
-//            Joueur joueur = joueurOptional.get();
-//            List<Statistique> statistiques = stat_repo.findByJoueurId(joueur.getId_joueur());
-//            return statistiques.stream().map(stat -> stat.getId_match().getId_match()).distinct().count();
-//        } else {
-//            // Gérer le cas où le joueur n'est pas trouvé
-////            throw new ChangeSetPersister.NotFoundException("Joueur non trouvé");
-//        }
-//        return null;
-//    }
 
 
 
