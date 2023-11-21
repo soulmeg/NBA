@@ -10,7 +10,6 @@ import java.util.List;
 
 @Repository
 public interface StatistiqueRepository extends JpaRepository<Statistique,Long> {
-//    List<Statistique> findByJoueurId(@Param("joueurId") Long joueurId);
     @Query("SELECT s FROM Statistique s WHERE s.id_joueur.id_joueur = :joueurId")
     List<Statistique> findByJoueurId(@Param("joueurId") Long joueurId);
 

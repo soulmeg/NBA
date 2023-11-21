@@ -36,4 +36,5 @@ public class Joueur {
     public void setId_equipe(Equipe id_equipe) {
         this.id_equipe = id_equipe;
     }
+
 }
