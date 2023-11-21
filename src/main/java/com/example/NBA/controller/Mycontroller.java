@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(name = "/nba")
+@CrossOrigin(origins = "*",allowedHeaders = "*")
 public class Mycontroller {
     @Autowired
     MatchRepository match_repo;
