@@ -144,7 +144,7 @@ public class Mycontroller {
         return stats;
     }
 
-    @GetMapping("/joueurByEquipe")
+    @GetMapping("/joueurByEquipe/{equipeId}")
     public List<Joueur> findByEquipe(@PathVariable Long equipeId){
         List<Joueur> joueurs = joueur_repo.findByIdEquipe(equipeId);
         return  joueurs;
