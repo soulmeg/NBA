@@ -117,6 +117,11 @@ public class Mycontroller {
         match_jouer_repo.save(j);
     }
 
+    @GetMapping("/joueurByEquipe/{equipeId}")
+    public List<Joueur> findByEquipe(@PathVariable Long equipeId){
+        List<Joueur> joueurs = joueur_repo.findByIdEquipe(equipeId);
+        return  joueurs;
+    }
     public double calculate(Long id_joueur){
         return 0;
     }
@@ -144,11 +149,7 @@ public class Mycontroller {
         return stats;
     }
 
-    @GetMapping("/joueurByEquipe/{equipeId}")
-    public List<Joueur> findByEquipe(@PathVariable Long equipeId){
-        List<Joueur> joueurs = joueur_repo.findByIdEquipe(equipeId);
-        return  joueurs;
-    }
+
     public Long calculateNombreTotalMatchsJoues(@PathVariable Long joueurId) {
         List<Statistique> statistiques = stat_repo.findByJoueurId(joueurId);
         return statistiques.stream()
