@@ -28,4 +28,12 @@ public class Joueur {
     public void setNom_joueur(String nom_joueur) {
         this.nom_joueur = nom_joueur;
     }
+
+    public Equipe getId_equipe() {
+        return id_equipe;
+    }
+
+    public void setId_equipe(Equipe id_equipe) {
+        this.id_equipe = id_equipe;
+    }
 }
