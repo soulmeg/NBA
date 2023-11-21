@@ -118,7 +118,7 @@ public class Mycontroller {
     }
 
     public double calculate(Long id_joueur){
-        return 0;
+        return 1;
     }
 
     @GetMapping("/getFinalStat")
