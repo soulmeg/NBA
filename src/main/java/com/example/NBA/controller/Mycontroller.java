@@ -104,8 +104,6 @@ public class Mycontroller {
         stat_repo.save(j);
     }
 
-
-
     @GetMapping("/getAllMatch_jouer")
     public List<Match_jouer> getAllMatch_jouer() {
         List<Match_jouer> joueurList = match_jouer_repo.findAll();
@@ -123,7 +121,7 @@ public class Mycontroller {
         return  joueurs;
     }
     public double calculate(Long id_joueur){
-        return 0;
+        return 1;
     }
 
     @GetMapping("/getFinalStat")
